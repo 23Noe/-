@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovementStateMachine : StateMachine
+{
+    public Player Player { get;}
+    public PlayerIdlingState idlingState { get; }
+    public Walking WalkingState { get; }
+    public Running RunningState { get; }
+    public Sprinting SprintingState { get; }
+    public PlayerMovementStateMachine(Player player)
+    {
+        Player = player;
+        idlingState = new PlayerIdlingState(this);
+        WalkingState = new Walking(this);
+        RunningState = new Running(this);  
+        SprintingState = new Sprinting(this);
+    }
+}
