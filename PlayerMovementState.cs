@@ -65,8 +65,7 @@ public class PlayerMovementState : IState
         Vector3 currentPlayerHorizontalVelocity = GetPlayerHorizontalVelocity();
 
         stateMachine.Player.Rigidbody.
-            AddForce(movementDirection * movementSpeed -
-            currentPlayerHorizontalVelocity,ForceMode.VelocityChange);
+            AddForce(movementDirection * movementSpeed - currentPlayerHorizontalVelocity,ForceMode.VelocityChange);
     }
 
     
